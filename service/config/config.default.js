@@ -53,9 +53,23 @@ module.exports = appInfo => {
   };
   config.cors = {
     origin: 'http://localhost:3000',
-    credentials: true, // 开启认证
+    credentials: true, // 允许cookie跨域
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
   };
+
+  config.session = {
+    // 设置session cookie里面的key
+    key: 'SESSION_ID',
+    // 设置最大的过期时间
+    maxAge: 30 * 1000 * 60,
+    // 设置是否只服务端可以访问
+    httpOnly: true,
+    // 设置是否加密
+    encrypt: true,
+    // 设置为true每次刷新页面的时候session都会被延期
+    renew: true,
+  };
+
 
   return {
     ...config,

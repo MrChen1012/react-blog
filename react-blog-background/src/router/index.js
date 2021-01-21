@@ -7,7 +7,7 @@ function PageRouter() {
   return (
     <Router>
       <Route path='/' exact component={Login} />
-      <Route path='/index/' exact component={Admin} />
+      <Route path='/index/' component={Admin} />
     </Router>
   )
 }
