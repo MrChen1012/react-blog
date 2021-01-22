@@ -5,7 +5,7 @@ import Admin from '../pages/Admin'
 
 function PageRouter() {
   return (
-    <Router>
+    <Router basename='/chen'>
       <Route path='/' exact component={Login} />
       <Route path='/index/' component={Admin} />
     </Router>
